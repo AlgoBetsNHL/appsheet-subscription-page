@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Choose Your Subscription Plan</title>
+  <script src="https://js.stripe.com/v3/"></script>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 50px; background-color: #f0f0f0; }
+    .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+    .plan { border: 1px solid #ddd; padding: 20px; margin: 15px 0; border-radius: 6px; }
+    h1 { color: #333; }
+    button {
+      background-color: #6772e5; color: white; border: none; padding: 12px 24px;
+      font-size: 16px; cursor: pointer; border-radius: 4px; margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+    button:hover { background-color: #5469d4; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Subscribe to Premium Access</h1>
+    <p>Select the plan that works for you. You can choose to pay in Canadian or US dollars.</p>
+
+    <div class="plan">
+      <h2>Monthly Pass</h2>
+      <p>$12.99 CAD or $9.99 USD per month</p>
+      <button onclick="redirectToCheckout('price_1RuHJuHygr986gwFqtd2ccWb')">Pay $12.99 CAD/month</button>
+      <button onclick="redirectToCheckout('price_1RuHJuHygr986gwFqtd2ccWb')">Pay $9.99 USD/month</button>
+    </div>
+
+    <div class="plan">
+      <h2>Season Pass</h2>
+      <p>$89.99 CAD or $69.99 USD per year</p>
+      <button onclick="redirectToCheckout('price_1RuHMOHygr986gwFh15MUTmi')">Pay $89.99 CAD/year</button>
+      <button onclick="redirectToCheckout('price_1RuHMOHygr986gwFh15MUTmi')">Pay $69.99 USD/year</button>
+    </div>
+  </div>
+
+  <script>
+    const stripe = Stripe('pk_live_51RuGwdHygr986gwFFKyGptzL2owRQfO5tOxJyBUbcwXo5qWxkcA2huIkD20DdhQMwAv9LuVIDYS0qTRin9fmQBCj00fwNPApuU');
+
+    async function redirectToCheckout(priceId) {
+      try {
+        const { sessionId } = await fetch('/create-checkout-session', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            priceId: priceId,
+            successUrl: 'https://www.yourdomain.com/success',
+            cancelUrl: 'https://www.yourdomain.com/cancel',
+          }),
+        }).then(response => response.json());
+
+        const { error } = await stripe.redirectToCheckout({
+          sessionId: sessionId,
+        });
+
+        if (error) {
+          console.error('Error during redirect:', error);
+        }
+      } catch (error) {
+        console.error('An error occurred:', error);
+      }
+    }
+  </script>
+</body>
+</html>
