@@ -7,82 +7,80 @@
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="1894.7">
   <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Choose Your Subscription Plan&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://js.stripe.com/v3/"&gt;&lt;/script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>body { font-family: sans-serif; text-align: center; padding: 50px; background-color: #f0f0f0; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.plan { border: 1px solid #ddd; padding: 20px; margin: 15px 0; border-radius: 6px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>h1 { color: #333; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>button {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background-color: #6772e5; color: white; border: none; padding: 12px 24px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px; cursor: pointer; border-radius: 4px; margin-top: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: background-color 0.3s;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>button:hover { background-color: #5469d4; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Subscribe to Premium Access&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Select the plan that works for you. You can choose to pay in Canadian or US dollars.&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="plan"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Monthly Pass&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;$12.99 CAD or $9.99 USD per month&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;button onclick="redirectToCheckout('price_1RuHJuHygr986gwFqtd2ccWb')"&gt;Pay $12.99 CAD/month&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;button onclick="redirectToCheckout('price_1RuHJuHygr986gwFqtd2ccWb')"&gt;Pay $9.99 USD/month&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="plan"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Season Pass&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;$89.99 CAD or $69.99 USD per year&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;button onclick="redirectToCheckout('price_1RuHMOHygr986gwFh15MUTmi')"&gt;Pay $89.99 CAD/year&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;button onclick="redirectToCheckout('price_1RuHMOHygr986gwFh15MUTmi')"&gt;Pay $69.99 USD/year&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Replace with your actual Publishable Key from Stripe Dashboard</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const stripe = Stripe('pk_live_51RuGwdHygr986gwFFKyGptzL2owRQfO5tOxJyBUbcwXo5qWxkcA2huIkD20DdhQMwAv9LuVIDYS0qTRin9fmQBCj00fwNPApuU');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>async function redirectToCheckout(priceId) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>try {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const { sessionId } = await fetch('/create-checkout-session', {</p>
-<p class="p1"><span class="Apple-converted-space">          </span>method: 'POST',</p>
-<p class="p1"><span class="Apple-converted-space">          </span>headers: {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>'Content-Type': 'application/json',</p>
-<p class="p1"><span class="Apple-converted-space">          </span>},</p>
-<p class="p1"><span class="Apple-converted-space">          </span>body: JSON.stringify({</p>
-<p class="p1"><span class="Apple-converted-space">            </span>priceId: priceId,</p>
-<p class="p1"><span class="Apple-converted-space">            </span>successUrl: 'https://www.yourdomain.com/success', // URL to redirect to on successful payment</p>
-<p class="p1"><span class="Apple-converted-space">            </span>cancelUrl: 'https://www.yourdomain.com/cancel', <span class="Apple-converted-space">  </span>// URL to redirect to on cancellation</p>
-<p class="p1"><span class="Apple-converted-space">          </span>}),</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}).then(response =&gt; response.json());</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>const { error } = await stripe.redirectToCheckout({</p>
-<p class="p1"><span class="Apple-converted-space">          </span>sessionId: sessionId,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>if (error) {</p>
-<p class="p1"><span class="Apple-converted-space">          </span>console.error('Error during redirect:', error);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>} catch (error) {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>console.error('An error occurred:', error);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;Choose Your Subscription Plan&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script src="https://js.stripe.com/v3/"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>body { font-family: sans-serif; text-align: center; padding: 50px; background-color: #f0f0f0; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.plan { border: 1px solid #ddd; padding: 20px; margin: 15px 0; border-radius: 6px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>h1 { color: #333; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>button {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: #6772e5; color: white; border: none; padding: 12px 24px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 16px; cursor: pointer; border-radius: 4px; margin-top: 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transition: background-color 0.3s;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>button:hover { background-color: #5469d4; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Subscribe to Premium Access&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Select the plan that works for you. You can choose to pay in Canadian or US dollars.&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="plan"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Monthly Pass&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p&gt;$12.99 CAD or $9.99 USD per month&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button onclick="redirectToCheckout('price_1RuHJuHygr986gwFqtd2ccWb')"&gt;Pay $12.99 CAD/month&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button onclick="redirectToCheckout('price_1RuHJuHygr986gwFqtd2ccWb')"&gt;Pay $9.99 USD/month&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="plan"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Season Pass&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p&gt;$89.99 CAD or $69.99 USD per year&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button onclick="redirectToCheckout('price_1RuHMOHygr986gwFh15MUTmi')"&gt;Pay $89.99 CAD/year&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button onclick="redirectToCheckout('price_1RuHMOHygr986gwFh15MUTmi')"&gt;Pay $69.99 USD/year&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const stripe = Stripe('pk_live_51RuGwdHygr986gwFFKyGptzL2owRQfO5tOxJyBUbcwXo5qWxkcA2huIkD20DdhQMwAv9LuVIDYS0qTRin9fmQBCj00fwNPApuU');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>async function redirectToCheckout(priceId) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>try {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const { sessionId } = await fetch('/create-checkout-session', {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>method: 'POST',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>headers: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>'Content-Type': 'application/json',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>body: JSON.stringify({</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>priceId: priceId,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>successUrl: 'https://www.yourdomain.com/success',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>cancelUrl: 'https://www.yourdomain.com/cancel',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>}),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}).then(response =&gt; response.json());</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const { error } = await stripe.redirectToCheckout({</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>sessionId: sessionId,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (error) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>console.error('Error during redirect:', error);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} catch (error) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>console.error('An error occurred:', error);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
 </body>
 </html>
